@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Box Nester — a recursive box-pushing puzzle</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="top-bar">
+      <button id="menu-btn" class="icon-btn" title="Levels">☰</button>
+      <div id="level-title">Level 1</div>
+      <button id="restart-btn" class="icon-btn" title="Restart level">⟲</button>
+    </header>
+
+    <div id="breadcrumb"></div>
+
+    <main id="stage-wrap">
+      <canvas id="stage" width="800" height="800"></canvas>
+      <div id="win-banner" class="hidden">
+        <div id="win-card">
+          <h2>Level Complete!</h2>
+          <p>Every box made it into the red box.</p>
+          <button id="next-level-btn">Next Level ▶</button>
+        </div>
+      </div>
+    </main>
+
+    <footer id="controls">
+      <div id="dpad">
+        <button data-dir="up" class="dpad-btn up">▲</button>
+        <button data-dir="left" class="dpad-btn left">◀</button>
+        <button data-dir="down" class="dpad-btn down">▼</button>
+        <button data-dir="right" class="dpad-btn right">▶</button>
+      </div>
+      <div id="action-buttons">
+        <button id="pull-btn" class="action-btn">Pull: OFF</button>
+        <button id="enter-btn" class="action-btn primary">Enter / Exit (E)</button>
+      </div>
+    </footer>
+  </div>
+
+  <div id="level-menu" class="hidden">
+    <div id="level-menu-card">
+      <h2>Select Level</h2>
+      <div id="level-grid"></div>
+      <button id="close-menu-btn">Close</button>
+    </div>
+  </div>
+
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
